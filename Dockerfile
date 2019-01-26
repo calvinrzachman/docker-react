@@ -5,13 +5,13 @@
 FROM node:alpine as build
 
 # Add files (package.json and index) to the containers files
-COPY package.json . 
+COPY ./package.json ./ 
 # this adds only whats required for npm install so that we save time
 # on each rebuild
 
 # Download and install a dependency
 RUN npm install
-COPY . . 
+COPY ./ ./ 
 
 # Tell image what to do on container start
 RUN npm run build
