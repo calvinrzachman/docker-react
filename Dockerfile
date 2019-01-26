@@ -3,6 +3,7 @@
 # BUILD PHASE
 # Use an existing Docker image as a base
 FROM node:alpine as builder
+WORKDIR /app
 
 # Add files (package.json and index) to the containers files
 COPY ./package.json ./ 
@@ -20,4 +21,4 @@ RUN ["npm", "run", "build"]
 # RUN PHASE
 FROM nginx
 EXPOSE 80
-# COPY --from=builder /app/build ./usr/share/nginx/html
+COPY --from=builder /app/build ./usr/share/nginx/html
