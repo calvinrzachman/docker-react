@@ -17,7 +17,7 @@ class App extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn Docker Today Now
+            We successfully deployed to AWS. This is the Feature Branch
           </a>
         </header>
       </div>
